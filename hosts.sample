@@ -12,7 +12,7 @@ openshift_release=v3.11
 openshift_deployment_type=openshift-enterprise
 
 ansible_ssh_user=root
-root_password="Dell0SS!"
+root_password="Your_root_PWD"
 
 openshift_storage_glusterfs_image=registry.access.redhat.com/rhgs3/rhgs-server-rhel7:v3.11
 openshift_storage_glusterfs_block_image=registry.access.redhat.com/rhgs3/rhgs-gluster-block-prov-rhel7:v3.11
@@ -26,7 +26,7 @@ openshift_master_cluster_ip=192.168.20.99
 openshift_master_cluster_public_ip=100.82.42.99
 openshift_master_portal_net=10.0.0.0/16
 openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider'}]
-openshift_master_htpasswd_users={'admin': '$apr1$i4wJZDwp$dKhqHNvPCzTcXAt99Gooz0'}
+openshift_master_htpasswd_users={'admin': '$XXXXXY-Passwd-Hash-XXXXXXXXX'}
 openshift_clock_enabled=true
 os_sdn_network_plugin_name='redhat/openshift-ovs-multitenant'
  
@@ -71,10 +71,10 @@ openshift_storage_glusterfs_registry_block_storageclass=true
 openshift_storage_glusterfs_registry_block_storageclass_default=false
  
 # Red Hat Subscription information. Use user and password OR activation key and organization id.
-rhel_subscription_user=dellcloudsol
-rhel_subscription_pass=b3s0Mon3Great
-activationkey=5288948
-org_id=5288948
+rhel_subscription_user=RHEL_USER
+rhel_subscription_pass=RHEL_Subscription_PWD
+activationkey=YOUR_Activation_Key
+org_id=Your_ORG_ID
 
 # Network settings. Required for OS provisioning. 
 dns_local=192.168.20.11
@@ -148,10 +148,10 @@ stor4.r5a.local openshift_ip=192.168.20.26 idrac_ip=192.168.10.26 serial=J4ZLCS2
 
 [nodes:vars]
 idrac_user=root
-idrac_password=Dell0SS!
+idrac_password=Your_iDRAC_PWD
 
-oreg_auth_user=dellcloudsol
-oreg_auth_password=b3s0Mon3Great
+oreg_auth_user=Your_Auth_User
+oreg_auth_password=Your_Auth_Passwd
 
 oreg_url=registry.redhat.io/openshift3/ose-${component}:${version}
 openshift_examples_modify_imagestreams=true
